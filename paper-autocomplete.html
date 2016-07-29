@@ -39,22 +39,27 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       width: 100%;
       position: absolute;
       z-index: 1000;
+      @apply(--paper-autocomplete-wrapper);
+
     }
     :host[suggestions-in-overlay="true"] #suggestionsWrapper {
     }
     paper-item {
       position: relative;
       line-height:18px;
+      @apply(--paper-autocomplete-item);
     }
     paper-item:hover{
       background:#eee;
       color:#333;
       cursor:pointer;
+      @apply(--paper-autocomplete-item-hover);
     }
 
     paper-item.active{
       background:#eee;
       color:#333;
+      @apply(--paper-autocomplete-item-active);
     }
     #clear{
       display: none;
@@ -225,7 +230,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     /**
      * Clears the input text
      */
-    clear : function() {
+    _clear : function() {
       this.value=this._value;
       this.text=this._text;
       this.$.clear.style.display = 'none';
